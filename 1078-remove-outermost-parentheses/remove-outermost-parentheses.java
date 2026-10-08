@@ -1,37 +1,37 @@
 class Solution {
     public String removeOuterParentheses(String s) {
-        // String s1 = s.substring(1, s.length()-1);
-        char s1[] = s.toCharArray();
+
+        // char s1[] = s.toCharArray();
+        StringBuilder sb = new StringBuilder(s);
+
         StringBuilder result = new StringBuilder();
         int open  = 0;
-        for(int i = 0 ; i < s1.length ; i++){
+        for(int i = 0 ; i < s.length() ; i++){
             
-            if(s1[i] == '('){
-                if(open == 0){
-                    s1[i] = 0;
+            if(s.charAt(i) == '('){
+                if(open == 0){ //check for removable open parenthesis
+                    sb.setCharAt(i,'0') ;
                 }
                 open++;
             }
             else{
                 open --;
-                if(open > 0){
+                if(open > 0){  //check for removable closing paranthesis
                     
                 }
                 else{
-                    s1[i] = 0;
+                    sb.setCharAt(i,'0');
                 }
             }
-        }
-        // for(int i = s1.length -1 ; i >=0 ; i--){
-            
-        // }
-        for(int i = 0 ; i < s1.length ; i++){
-            if(s1[i] == 0){
+
+            // appends the correct answer
+            if(sb.charAt(i) == '0'){
 
             }else{
-                result.append(s1[i]);
+                result.append(sb.charAt(i));
             }
         }
+        
         return result.toString();
     }
 }
