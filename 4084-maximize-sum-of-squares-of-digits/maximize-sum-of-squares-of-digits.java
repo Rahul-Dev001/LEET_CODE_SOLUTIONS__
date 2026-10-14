@@ -5,12 +5,16 @@ class Solution {
             ans.append("");
             return ans.toString();
         }
-        while(sum/9 > 0){
-            ans.append("9");
-            num--;
-            sum = sum-9;
+        ans.append("9".repeat(sum/9));
+        
+        num = num - sum/9;
+        sum = sum%9;
+        // while(sum/9 > 0){
+        //     ans.append("9");
+        //     num--;
+        //     sum = sum-9;
 
-        }
+        // }
         if(sum%9 != 0){
             ans.append(String.valueOf(sum%9));
             num--;
