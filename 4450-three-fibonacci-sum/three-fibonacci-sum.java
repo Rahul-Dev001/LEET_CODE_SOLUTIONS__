@@ -11,6 +11,30 @@ class Solution {
             a = b;
             b = c;
             c = a+b;
+            if(a+b+c == n){
+                return true;
+            }
+            a = b;
+            b = c;
+            c = a+b;
+            if(a+b+c == n){
+                return true;
+            }
+            a = b;
+            b = c;
+            c = a+b;
+            if(a+b+c == n){
+                return true;
+            }
+            a = b;
+            b = c;
+            c = a+b;
+            if(a+b+c == n){
+                return true;
+            }
+            a = b;
+            b = c;
+            c = a+b;
 
         }
         return false;
