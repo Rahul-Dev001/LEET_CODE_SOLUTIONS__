@@ -57,7 +57,7 @@ class Solution {
                 count = 1;
             }
         }
-        sb.append(count);
+        sb.append(count); //append the final set of repeated non repeated number after the for loop ends
         sb.append(temp);
 
         return sb.toString();
