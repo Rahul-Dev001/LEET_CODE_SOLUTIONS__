@@ -5,7 +5,14 @@ class Solution {
 
 
         for(int i = 0 ; i < m ; i++){
-            sb.setLength(0);
+            
+            if(i != m-1 && i != 0){
+                s[i] = sb.toString();
+                continue;
+            }
+            else{
+                sb.setLength(0);
+            }
             for(int j = 0 ; j < n ; j++){
                 if(i != m-1 ){
                     if(j != 0){
