@@ -26,7 +26,7 @@ class Solution {
             current = current.next;
         }
         if(count == n){
-            return head.next;
+            return head.next; // if we have to remove te first element or can say last from the last element
         }
         
         current = head;
@@ -36,7 +36,7 @@ class Solution {
         // if(current == null){
         //     return head.next;
         // }
-        if(current.next.next != null){
+        if(n != 1){
         current.next = current.next.next;
         }
         else{
