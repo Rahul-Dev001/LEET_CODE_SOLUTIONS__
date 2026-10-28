@@ -8,40 +8,76 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
+// class Solution {
+//     public ListNode removeNthFromEnd(ListNode head, int n) {
+//         if(head == null || head.next == null && n == 1){
+//             return null;
+//         }
+//         // if(head.next.next == null){
+//         //     return head.next;
+//         // }
+//         ListNode current = head;
+        
+
+//         int count = 0;
+
+//         while(current != null){
+//             count++;
+//             current = current.next;
+//         }
+//         if(count == n){
+//             return head.next; // if we have to remove te first element or can say last from the last element
+//         }
+        
+//         current = head;
+//         for(int i = 1 ; i <= count - n-1 ; i++ ){
+//             current = current.next;
+//         }
+//         // if(current == null){
+//         //     return head.next;
+//         // }
+//         if(n != 1){
+//         current.next = current.next.next;
+//         }
+//         else{
+//             current.next = null;
+//         }
+
+//         return head;
+
+
+        
+//     }
+// }
+
+
+
+// turtle and rabbit or two pointer
+
+
 class Solution {
     public ListNode removeNthFromEnd(ListNode head, int n) {
         if(head == null || head.next == null && n == 1){
             return null;
         }
-        // if(head.next.next == null){
-        //     return head.next;
-        // }
-        ListNode current = head;
-        
 
-        int count = 0;
+        ListNode slow = head;
+        ListNode fast = head;
 
-        while(current != null){
-            count++;
-            current = current.next;
+        for(int i = 1 ; i <= n ; i++){
+            fast = fast.next;
         }
-        if(count == n){
-            return head.next; // if we have to remove te first element or can say last from the last element
+        if(fast == null){
+            return head.next;
         }
+
+        while(fast.next != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next.next;
         
-        current = head;
-        for(int i = 1 ; i <= count - n-1 ; i++ ){
-            current = current.next;
-        }
-        // if(current == null){
-        //     return head.next;
-        // }
-        if(n != 1){
-        current.next = current.next.next;
-        }
-        else{
-            current.next = null;
-        }
 
         return head;
 
