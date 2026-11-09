@@ -1,3 +1,5 @@
+// used a frequency array to check for duplicates 
+
 class Solution {
     public int sumOfUnique(int[] nums) {
         boolean seen[] = new boolean[101];
